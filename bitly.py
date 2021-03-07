@@ -14,20 +14,21 @@ class Bitly:
         try:
             response = requests.get(self.user_url, headers = self.headers)
             return json.loads(response.text) 
-        except:
-            print('werror') 
+        except Exception as e:
+            print(e)
+
     def bitlink_getter(self,group):
         full_bitlink_url = self.bitlink_url.format(group)
         try:
             response = requests.get( full_bitlink_url, headers = self.headers)
             return json.loads(response.text)
-        except:
-            print('error') 
+        except Exception as e:
+            print(e) 
 
     def clicks_getter(self, bitlink):
         full_clicks_url = self.clicks_url.format(bitlink)
         try:
             response = requests.get( full_clicks_url, headers = self.headers)
-            return json.loads(response.text)        
-        except:
-            print('error') 
+            return json.loads(response.text)      
+        except Exception as e:
+            print(e) 
