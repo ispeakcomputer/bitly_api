@@ -23,7 +23,6 @@ class Helper:
         return links
     def avg_calculator(self, links):
         for bitlink_data in links:
-            print(bitlink_data)
             bitlink_avgs = []
             one_bitlink_data = {}
             one_bitlink_data['bitlink'] = bitlink_data['bitlink']
@@ -35,5 +34,5 @@ class Helper:
                 bitlink_avg['30_day_avg'] = data['clicks']/30
         
                 one_bitlink_data['avgs'].append(bitlink_avg)
-                print(bitlink_avg)
-        return bitlink_avg
+                #print(bitlink_avg)
+        return one_bitlink_data
