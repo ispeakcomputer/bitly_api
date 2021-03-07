@@ -3,3 +3,5 @@ start.sh
 *.swp
 *.swo
 *~
+notes
+__pycache__
