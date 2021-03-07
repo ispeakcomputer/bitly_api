@@ -22,17 +22,21 @@ class Helper:
         
         return links
     def avg_calculator(self, links):
+        # 1.) build this for ea bitlink in "links" -> 
+        # {"bitlink": "bit.ly/test", "avgs": []}
         for bitlink_data in links:
-            bitlink_avgs = []
             one_bitlink_data = {}
             one_bitlink_data['bitlink'] = bitlink_data['bitlink']
             one_bitlink_data['avgs'] = []
+            # 2.) Run calculation for each country and build ->
+            # {"country": "US", "30_day_avg": 23.733333333333334}
             for data in bitlink_data['metrics']:
                 bitlink_avg = {}
                 bitlink_avg['country'] = data['value']
-                # clicks/30 days for 30 day avgerage
+                # clicks divided by 30 = 30 day average
                 bitlink_avg['30_day_avg'] = data['clicks']/30
         
+                # 3.) add 2.) above to to 1.) "avgs" list
                 one_bitlink_data['avgs'].append(bitlink_avg)
-                #print(bitlink_avg)
+        
         return one_bitlink_data
