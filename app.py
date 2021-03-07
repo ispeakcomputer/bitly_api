@@ -1,5 +1,5 @@
 import flask
-from flask import jsonify
+import json
 from bitly import Bitly
 from helper import Helper
 
@@ -18,10 +18,12 @@ def home():
     group_links = bitly_object.bitlink_getter(group['default_group_guid'])
     
     links = helper_object.json_snippet_builder(group_links)
-    
+    print(links)
+
     data = helper_object.avg_calculator(links)
 
-    print(data)
+    return(json.dumps(data))
+
 if __name__ == "__main__":
 
     app.run()
