@@ -1,13 +1,10 @@
 from bitly import Bitly
 
-# group = bitly_object.group_getter() 
-# Get the links for the users groups
-# group_links = bitly_object.bitlink_getter(group['default_group_guid'])
 
-#Feed in the bitly data on a user groups links to pull metrics and convert to 30 day avg 
 class Helper:
 
     def json_snippet_builder(self, group_links):
+        #Create our own json from Bitly API data to feed into avg_calculator
         bitly_object = Bitly()
     
         for link in group_links['links']:
@@ -22,13 +19,13 @@ class Helper:
         
         return links
     def avg_calculator(self, links):
-        # 1.) build this for ea bitlink in "links" -> 
+        # 1.) build this JSON for ea bitlink in "links" -> 
         # {"bitlink": "bit.ly/test", "avgs": []}
         for bitlink_data in links:
             one_bitlink_data = {}
             one_bitlink_data['bitlink'] = bitlink_data['bitlink']
             one_bitlink_data['avgs'] = []
-            # 2.) Run calculation for each country and build ->
+            # 2.) Run calculation for each country and build JSON->
             # {"country": "US", "30_day_avg": 23.733333333333334}
             for data in bitlink_data['metrics']:
                 bitlink_avg = {}
@@ -36,7 +33,7 @@ class Helper:
                 # clicks divided by 30 = 30 day average
                 bitlink_avg['30_day_avg'] = data['clicks']/30
         
-                # 3.) add 2.) to to 1.) "avgs" list
+                # 3.) add 2.) data to 1.) "avgs" list
                 one_bitlink_data['avgs'].append(bitlink_avg)
         
         return one_bitlink_data
