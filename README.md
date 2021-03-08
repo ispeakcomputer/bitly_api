@@ -1,5 +1,5 @@
 # Just Averaged - 30 Day Averaged Bitlink Metics
-======================
+------------------------
 
 Just Averaged is an API that pulls Bitlink country click data and returns each countries 30 day averaged clicks.
 
