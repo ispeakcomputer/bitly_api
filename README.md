@@ -3,6 +3,19 @@ Just Averaged is an API that pulls Bitlink click data and returns each countries
 
 Just Average combines your bitlink and the 30 day average per country into a single JSON snippet that it serves you.
 
+### Design
+
+The app starts with app.py and imports the Helper and Bitly classes. This acts as
+our main app. App.py handles URL routing, JWT Auth, and the high level abstract steps
+that our app will take. App.py will not start unless the Bitly token is in place. If the Bitly token expires later
+the user will get a message via JSON. App.py allows JWT default settings, but gives the user warnings if
+they run them.
+
+The Bitly class interacts with the Bitly API and returns its data. That is all.
+
+The Helper class breaks down and combines data from the Bitly class as well that 
+is easily fee into our 30 day calculation function in the same class.
+
 ### Example Data
 
 ```
@@ -47,7 +60,7 @@ Just Average combines your bitlink and the 30 day average per country into a sin
 2. Jump into the repo directory with ***cd bitly_api/***
 3. If you use an environment then ***python3 -m venv venv***
 3. Run ***source venv/bin/activate*** to activate your environment
-4. Run  ***pip install -r requirements.txt*** to install modules for app
+4. Run  ***pip install -r /path/to/requirements.txt*** to install modules for app
 5. Add your Bitly Token to BITLYTOKEN= in the start_here.sh file.
 6. Run ***chmod +x start_here.sh*** to allow executing the script
 7. Run ***./start_here.sh*** to run
