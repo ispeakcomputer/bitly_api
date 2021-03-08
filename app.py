@@ -19,7 +19,7 @@ app.config["DEBUG"] = True
 app.config["JWT_SECRET_KEY"] = jwt_secret_key  # Change this!
 
 bitly_object = Bitly(token)
-helper_object = Helper()
+helper_object = Helper(token)
 # Setup the Flask-JWT-Extended extension
 jwt = JWTManager(app)
 
@@ -66,6 +66,6 @@ if __name__ == "__main__":
         print('\033[31m' + ' * Fatal Error: Bitly API token missing')
         print('\033[39m')
         quit() 
-
-    # app.run(host="0.0.0.0", port=80)
-    app.run(host="0.0.0.0")
+    else:
+        # app.run(host="0.0.0.0", port=80)
+        app.run(host="0.0.0.0")

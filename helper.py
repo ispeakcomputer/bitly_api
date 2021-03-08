@@ -2,10 +2,12 @@ from bitly import Bitly
 
 
 class Helper:
+    def __init__(self, token):
+        self.token = token
 
     def json_snippet_builder(self, group_links):
         #Create our own json from Bitly API data to feed into avg_calculator
-        bitly_object = Bitly()
+        bitly_object = Bitly(self.token)
     
         for link in group_links['links']:
             metrics_from_bitly = bitly_object.clicks_getter(link['id'])
