@@ -13,4 +13,4 @@ COPY requirements.txt .
 
 RUN pip3 install --no-cache-dir -r requirements.txt && chmod +x start.sh
 
-CMD ./start.sh
+CMD ./start_here.sh
