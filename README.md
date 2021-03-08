@@ -70,7 +70,7 @@ curl -H 'Authorization: Bearer <TOKEN HERE>' -X GET http://0.0.0.0:88
 ## Development Setup
 When populating data to be used for this API you will need to create click data for bitlinks on your Bitly account. You can use a VPN to add clicks from any country and the bash snippet below to 'automate' clicks.
 
-Bitly doesn't regsister clicks via the curl's user agent and curl must follow redirects as this is how Bitly captures metrics in the first place, so use the following curl command to populate data for your accounts bitlinks
+Bitly doesn't regsister clicks via the curl user agent and curl must follow redirects as this is how Bitly captures metrics in the first place, so use the following curl command to populate data for your accounts bitlinks
 ```
 while sleep 5; do curl -A  "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100101 Firefox/81.0" -L https://bit.ly/9000420; done
 ```
