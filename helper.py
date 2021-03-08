@@ -36,7 +36,7 @@ class Helper:
                 # clicks divided by 30 = 30 day average
                 bitlink_avg['30_day_avg'] = data['clicks']/30
         
-                # 3.) add 2.) above to to 1.) "avgs" list
+                # 3.) add 2.) to to 1.) "avgs" list
                 one_bitlink_data['avgs'].append(bitlink_avg)
         
         return one_bitlink_data
