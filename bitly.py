@@ -16,6 +16,7 @@ class Bitly:
             return json.loads(response.text) 
         except Exception as e:
             print(e)
+            print("group_getter failed")
 
     def bitlink_getter(self,group):
         full_bitlink_url = self.bitlink_url.format(group)
@@ -24,6 +25,7 @@ class Bitly:
             return json.loads(response.text)
         except Exception as e:
             print(e) 
+            print("bitlink_getter failed")
 
     def clicks_getter(self, bitlink):
         full_clicks_url = self.clicks_url.format(bitlink)
@@ -32,3 +34,4 @@ class Bitly:
             return json.loads(response.text)      
         except Exception as e:
             print(e) 
+            print("clicks_getter failed")
