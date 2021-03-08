@@ -1,7 +1,7 @@
 # Just Averaged - 30 Day Averaged Bitlink Metics
-Just Averaged is an API that pulls Bitlink country click data and returns each countries 30 day average clicks.
+Just Averaged is an API that pulls Bitlink country click data from Bitly and returns each countries 30 day average clicks.
 
-Just Average combines your bitlink and the 30 day average per country into a single JSON snippet.
+Just Average combines your bitlink and the 30 day average per country into a single JSON snippet in response.
 
 ```
 {
@@ -52,14 +52,14 @@ Just Average combines your bitlink and the 30 day average per country into a sin
 
 ## Query The API
 
-These instructions are for using with Docker instructions above.
-Use with port 5000 if running on local system
+These instructions are for using with the quick start instructions above.
+Replace port 88 with port 5000 if running on local system using the start_here.sh script
 
 1. First you need to get your JWT code from the /login endpoint
 
 ```
-curl -X POST -H "Content-Type: application/json"  
-           -d '{"username":"test","password":"test"}' 
+curl -X POST -H "Content-Type: application/json"  \
+           -d '{"username":"test","password":"test"}' \
 	   http://127.0.0.1:88/login
 ```
 2. Then use the returned token to retrieve your data from the / endpoint
@@ -67,7 +67,7 @@ curl -X POST -H "Content-Type: application/json"
 curl -H 'Authorization: Bearer <TOKEN HERE>' -X GET http://0.0.0.0:88
 ```
 
-## Development Setup
+## Populating Data For Development
 When populating data to be used for this API you will need to create click data for bitlinks on your Bitly account. You can use a VPN to add clicks from any country and the bash snippet below to 'automate' clicks.
 
 Bitly doesn't regsister clicks via the curl's user agent and curl must follow redirects as this is how Bitly captures metrics in the first place, so use the following curl command to populate data for your accounts bitlinks
