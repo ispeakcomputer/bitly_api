@@ -50,7 +50,7 @@ Just Average combines your bitlink and the 30 day average per country into a sin
 4. Run  ***pip install -r /path/to/requirements.txt*** to install modules for app
 5. Add your Bitly Token to BITLYTOKEN= in the start_here.sh file.
 6. Run ***chmod +x start_here.sh*** to allow executing the script
-7. Run ./start_here.sh to run
+7. Run ***./start_here.sh*** to run
 
 ## Query The API
 
