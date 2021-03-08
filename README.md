@@ -32,8 +32,8 @@ Just Average combines your bitlink and the 30 day average per country into a sin
 ```
 ## Quick Start
 1. Install Docker
-2. Clone git repo with ***git clone git@github.com:ispeakcomputer/bitly_api.git***
-3. Run ***cd bitly_api***
+2. Download the repo 
+3. Move into the repo directory with the command ***cd bitly_api***
 4. Add your Bitly API Token to BITLYTOKEN=
 5. run ***docker build -t just_average -f Dockerfile .*** Do not forget the dot at the end
 6. run ***docker run -it -p 88:5000 just_average***
@@ -41,8 +41,8 @@ Just Average combines your bitlink and the 30 day average per country into a sin
 
 
 ## Linux Installation 
-1. Clone git repo with ***git clone git@github.com:ispeakcomputer/bitly_api.git***
-2. Run ***cd bitly_api***
+1. Download the repo
+2. Jump into the repo directory with ***cd bitly_api***
 3. If you use an environment then ***python3 -m venv venv***
 3. Run ***source venv/bin/activate*** to activate your environment
 4. Run  ***pip install -r /path/to/requirements.txt*** to install modules for app
