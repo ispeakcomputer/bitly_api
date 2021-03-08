@@ -1,7 +1,7 @@
 # Just Averaged - 30 Day Averaged Bitlink Metics
-Just Averaged is an API that pulls Bitlink country click data and returns each countries 30 day averaged clicks.
+Just Averaged is an API that pulls Bitlink country click data and returns each countries 30 day average clicks.
 
-Just Average combines your bitlink and the 30 day average per country into a single JSON snippet that looks like this.
+Just Average combines your bitlink and the 30 day average per country into a single JSON snippet.
 
 ```
 {
@@ -34,7 +34,7 @@ Just Average combines your bitlink and the 30 day average per country into a sin
 1. Install Docker
 2. Clone git repo with ***git clone git@github.com:ispeakcomputer/bitly_api.git***
 3. Run ***cd bitly_api***
-4. run ***docker build -t just_average -f Dockerfile .***
+4. run ***docker build -t just_average -f Dockerfile .*** Do not forget the dot at the end
 5. run ***docker run -it -p 88:5000 just_average***
 
 
