@@ -20,11 +20,9 @@ app.config["JWT_SECRET_KEY"] = jwt_secret_key  # Change this!
 
 bitly_object = Bitly(token)
 helper_object = Helper(token)
-# Setup the Flask-JWT-Extended extension
-jwt = JWTManager(app)
 
-# Create a route to authenticate your users and return JWTs. The
-# create_access_token() function is used to actually generate the JWT.
+# Create a route to authenticate your users and return JWTs.
+jwt = JWTManager(app)
 @app.route("/login", methods=["POST"])
 def login():
     username = request.json.get("username", None)
@@ -34,11 +32,6 @@ def login():
 
     access_token = create_access_token(identity=username)
     return jsonify(access_token=access_token)
-
-
-# Protect a route with jwt_required, which will kick out requests
-# without a valid JWT present.
-
 
 @app.route('/', methods=['GET'])
 @jwt_required()
@@ -74,7 +67,7 @@ if __name__ == "__main__":
     else:
         #Check our token exists and that Bitly likes it before starting
         group = bitly_object.group_getter() 
-        print(group)
+        
         if 'FORBIDDEN' in group.values():
             print('\033[31m' + ' * Error: Bitly doesn\'t like your token. Replace or check it. Exiting.')
             print('\033[39m')
