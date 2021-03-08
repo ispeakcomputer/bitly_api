@@ -36,6 +36,7 @@ Just Average combines your bitlink and the 30 day average per country into a sin
 3. Run ***cd bitly_api***
 4. run ***docker build -t just_average -f Dockerfile .*** Do not forget the dot at the end
 5. run ***docker run -it -p 88:5000 just_average***
+6. Skip to and follow the README section called ***Query The API*** below
 
 
 ## Linux Installation 
