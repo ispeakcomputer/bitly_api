@@ -12,12 +12,13 @@ from flask_jwt_extended import JWTManager
 jwt_username = os.environ.get('JWTUSER')
 jwt_password = os.environ.get('JWTPASS')
 jwt_secret_key  = os.environ.get('JWT_SECRET_KEY')
+token = os.environ.get('BITLYTOKEN')
 
 app = flask.Flask(__name__)
 app.config["DEBUG"] = True
 app.config["JWT_SECRET_KEY"] = jwt_secret_key  # Change this!
 
-bitly_object = Bitly()
+bitly_object = Bitly(token)
 helper_object = Helper()
 # Setup the Flask-JWT-Extended extension
 jwt = JWTManager(app)
@@ -57,9 +58,14 @@ if __name__ == "__main__":
     if jwt_username and jwt_password == "test":
         print('\033[33m' + ' * WARNING: Jwt username and password are default. Change this for production.')
         print('\033[39m')
-    if not jwt_secret_key:
-        print('\033[31m' + ' * ERROR: Bitly API key isn\'t set. You must do this first ')
+
+    if jwt_secret_key == "changethis" :
+        print('\033[33m' + ' * WARNING: Jwt Secret is set to default. Change this for production.')
+        print('\033[39m')
+    if not token:
+        print('\033[31m' + ' * Fatal Error: Bitly API token missing')
         print('\033[39m')
         quit() 
+
     # app.run(host="0.0.0.0", port=80)
     app.run(host="0.0.0.0")

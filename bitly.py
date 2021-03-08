@@ -4,8 +4,9 @@ import os
 
 class Bitly:
 
-    def __init__(self):
-        self.headers={'Authorization': 'Bearer ' + os.environ.get('BITLYTOKEN')}
+    def __init__(self, token):
+        self.token = token
+        self.headers={'Authorization': 'Bearer ' + token}
         self.user_url = 'https://api-ssl.bitly.com/v4/user'
         self.bitlink_url='https://api-ssl.bitly.com/v4/groups/{}/bitlinks'
         self.clicks_url ='https://api-ssl.bitly.com/v4/bitlinks/{}/countries'
