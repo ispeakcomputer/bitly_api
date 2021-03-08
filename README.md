@@ -27,7 +27,7 @@ Just Average combines your bitlink and the 30 day average per country into a sin
       "country": "UA"
     }
   ], 
-  "bitlink": "bit.ly/3kHENK4"
+  "bitlink": "bit.ly/3kHEN66"
 }
 ```
 ## Quick Start
@@ -58,8 +58,8 @@ Change these example to use port 5000 if running on local system with ./start_he
 1. First you need to get your JWT code from the /login endpoint with the following Curl command
 
 ```
-curl -X POST -H "Content-Type: application/json"\  
-           -d '{"username":"test","password":"test"}'\ 
+curl -X POST -H "Content-Type: application/json" \  
+           -d '{"username":"test","password":"test"}' \ 
 	   http://127.0.0.1:88/login
 ```
 2. Then use the returned token to retrieve your data from the / endpoint using Curl
