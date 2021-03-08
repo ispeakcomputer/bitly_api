@@ -55,14 +55,14 @@ Just Average combines your bitlink and the 30 day average per country into a sin
 These instructions are for using with Docker instructions above.
 Use with port 5000 if running on local system
 
-1. First you need to get your JWT code.
+1. First you need to get your JWT code from the /login endpoint
 
 ```
 curl -X POST -H "Content-Type: application/json"  
            -d '{"username":"test","password":"test"}' 
 	   http://127.0.0.1:88/login
 ```
-2. Then use it to retrieve your data
+2. Then use the returned token to retrieve your data from the / endpoint
 ```
 curl -H 'Authorization: Bearer <TOKEN HERE>' -X GET http://0.0.0.0:88
 ```
