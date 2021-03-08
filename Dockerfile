@@ -11,6 +11,6 @@ WORKDIR /app
 ADD . /app/
 COPY requirements.txt .
 
-RUN pip3 install --no-cache-dir -r requirements.txt && chmod +x start.sh
+RUN pip3 install --no-cache-dir -r requirements.txt && chmod +x start_here.sh
 
 CMD ./start_here.sh
