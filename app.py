@@ -17,7 +17,6 @@ helper_object = Helper()
 app.config["JWT_SECRET_KEY"] = "super-secret"  # Change this!
 jwt = JWTManager(app)
 
-
 # Create a route to authenticate your users and return JWTs. The
 # create_access_token() function is used to actually generate the JWT.
 @app.route("/login", methods=["POST"])
@@ -36,7 +35,7 @@ def login():
 
 
 @app.route('/', methods=['GET'])
-@jwt_required
+@jwt_required()
 def home():
     # Get default user group
     group = bitly_object.group_getter() 
@@ -50,5 +49,5 @@ def home():
     return jsonify(data)
 
 if __name__ == "__main__":
-
-    app.run()
+    # app.run(host="0.0.0.0", port=80)
+    app.run(host="0.0.0.0")
