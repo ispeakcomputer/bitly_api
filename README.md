@@ -1,23 +1,7 @@
 # Just Averaged - Bitlinks 30 Day Average Per Country
 Just Averaged is an API that pulls Bitlink click data and returns each countries 30 day averages.
 
-Just Average combines your bitlink and the 30 day average per country into a single JSON snippet that it serves you.
-
-### Design
-
-#### App.py
-The app starts with app.py and imports the Helper and Bitly classes. This acts as
-our main app. 
-
-App.py handles URL routing, JWT Auth, and the high level abstract steps that our app will take. 
-
-App.py will not start unless the Bitly token is in place and can make successful calls to the Bitly API. If the Bitly token expires later the user will get a message via JSON. 
-
-App.py allows JWT default settings, but gives the user warnings if they run them.
-#### Bitly.py
-The Bitly class interacts with the Bitly API endpoints and returns data. That is all.
-#### Helper.py
-The Helper class breaks down and combines data from the Bitly class to feed into our 30 day average calculation function in the same class.
+Just Average combines your bitlink and the 30 day average per country into a single JSON snippet.
 
 ### Example Data
 
@@ -48,6 +32,23 @@ The Helper class breaks down and combines data from the Bitly class to feed into
   "bitlink": "bit.ly/3kHEN66"
 }
 ```
+
+### Design
+
+#### App.py
+The app starts with app.py and imports the Helper and Bitly classes. This acts as
+our main app. 
+
+App.py handles URL routing, JWT Auth, and the high level abstract steps that our app will take. 
+
+App.py will not start unless the Bitly token is in place and can make successful calls to the Bitly API. If the Bitly token expires later the user will get a message via JSON. 
+
+App.py allows JWT default settings, but gives the user warnings if they run them.
+#### Bitly.py
+The Bitly class interacts with the Bitly API endpoints and returns data. That is all.
+#### Helper.py
+The Helper class breaks down and combines data from the Bitly class to feed into our 30 day average calculation function in the same class.
+
 ## Quick Start
 1. Install Docker
 2. Download the repo 
