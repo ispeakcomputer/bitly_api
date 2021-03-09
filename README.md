@@ -5,6 +5,7 @@ Just Average combines your bitlink and the 30 day average per country into a sin
 
 ### Design
 
+#### App.py
 The app starts with app.py and imports the Helper and Bitly classes. This acts as
 our main app. 
 
@@ -12,9 +13,9 @@ App.py handles URL routing, JWT Auth, and the high level abstract steps that our
 App.py will not start unless the Bitly token is in place. If the Bitly token expires later
 the user will get a message via JSON. App.py allows JWT default settings, but gives the user warnings if
 they run them.
-
+#### Bitly.py
 The Bitly class interacts with the Bitly API and returns its data. That is all.
-
+#### Helper.py
 The Helper class breaks down and combines data from the Bitly class to feed into our 30 day average calculation function in the same class.
 
 ### Example Data
