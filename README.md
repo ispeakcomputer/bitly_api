@@ -1,7 +1,7 @@
 # Just Averaged - Bitlinks 30 Day Average Per Country
 Just Averaged is an API that pulls Bitlink click data and returns each countries 30 day averages.
 
-Just Average combines your bitlink and the 30 day average per country into a single JSON snippet.
+Just Average combines your bitlink and the click 30 day average per country into a single JSON snippet.
 
 ### Example Data
 
@@ -93,4 +93,6 @@ while sleep 5; do curl -A  "Mozilla/5.0 (X11; Linux x86_64; rv:60.0) Gecko/20100
 ```
 ## Production Setup
 
-You will want to update the JWT secret key, username and password environment variables within start_here.sh before running your docker build or start the app as the defaults settings are not secure. There are two warnings you will see disappear see once these values are changed from the defaults.
+You will want to update the JWT secret key, username and password environment variables within start_here.sh before docker build or starting the app.The default settings are not secure. 
+
+There are two warnings you will see disappear during startup once these values are changed from the defaults.
