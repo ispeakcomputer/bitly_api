@@ -8,21 +8,23 @@ class Helper:
     def json_snippet_builder(self, group_links):
         #Create our own json from Bitly API data to feed into avg_calculator
         bitly_object = Bitly(self.token)
-    
+        
+        links = []
         for link in group_links['links']:
             metrics_from_bitly = bitly_object.clicks_getter(link['id'])
-            
-            links = []
+            # links = []
             one_link_metrics = {}            
             one_link_metrics['metrics']=metrics_from_bitly['metrics']
             one_link_metrics['bitlink']=link['id']
             
             links.append(one_link_metrics)
-        
+            # print(links)        
         return links
     def avg_calculator(self, links):
         # 1.) build this JSON for ea bitlink in "links" -> 
         # {"bitlink": "bit.ly/test", "avgs": []}
+        links_json={}
+        links_list=[]
         for bitlink_data in links:
             one_bitlink_data = {}
             one_bitlink_data['bitlink'] = bitlink_data['bitlink']
@@ -37,5 +39,6 @@ class Helper:
         
                 # 3.) add 2.) data to 1.) "avgs" list
                 one_bitlink_data['avgs'].append(bitlink_avg)
-        
-        return one_bitlink_data
+            links_list.append(one_bitlink_data)
+            # print(links_list)
+        return links_list
