@@ -83,6 +83,7 @@ curl -X POST -H "Content-Type: application/json" -d '{"username":"test","passwor
 ```
 curl -H 'Authorization: Bearer <TOKEN HERE>' -X GET http://0.0.0.0:88
 ```
+This is where you get the JSON output that you see above
 
 ## Development Setup
  When populating data to be used for this API you will need to create click data for bitlinks on your Bitly account. If you do not already have any metrics you can use a VPN to add clicks from any country and the bash snippet below to 'automate' clicks.
